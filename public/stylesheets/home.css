@@ -1,0 +1,49 @@
+header {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/coffee_cafe_2.0.webp");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.header-content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.meme-table-row {
+  border: 1px solid gray;
+  margin: 20px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.meme-table-row .t-row:nth-child(even) {
+  background-color: rgb(209, 209, 209);
+  margin: 20px !important;
+}
+
+.t-row button {
+  margin-top: 25px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.t-row button:hover {
+  background-color: rgb(0, 0, 0, 0.8);
+}
+
+.t-row .text {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 35px;
+  padding-left: 40px;
+}

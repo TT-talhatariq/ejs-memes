@@ -1,0 +1,47 @@
+.custom-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+.custom-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.custom-card .card-body {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.custom-card .card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.custom-card .card-text {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.meme-detail-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.meme-detail-container h1 {
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 1px double #928f8f;
+}

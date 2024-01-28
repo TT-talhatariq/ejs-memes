@@ -1,0 +1,38 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    console.log("here");
+    // Handle the form submission
+    $("#search-btn").click(function (e) {
+      e.preventDefault();
+      const query = $("#search").val();
+      console.log(query);
+      $.get(`/search?query=${query}`, function (data) {
+        // if no memes found
+        if (typeof data === "string") {
+          const tbody = $("#table tbody");
+          tbody.empty(); // Clear the existing table content
+          tbody.append(
+            `<tr class="t-row"><td class="text">No memes found</td></tr>`
+          );
+          return;
+        }
+
+        // Update the table with the search results
+        const tbody = $("#table tbody");
+        tbody.empty(); // Clear the existing table content
+        data.forEach(function (meme) {
+          const tr = $('<tr class="t-row"></tr>');
+          tr.append(`<td class="text">${meme.name}</td>`);
+          tr.append(
+            `<td><img width="20%" height="100px" src="${meme.url}" alt="" /></td>`
+          );
+          tr.append(
+            `<td><button class="btn btn-primary" onclick="window.location.href='/meme/${meme.id}'">Details</button></td>`
+          );
+          tbody.append(tr); // Add the row to the table
+        });
+      });
+    });
+  });
+</script>

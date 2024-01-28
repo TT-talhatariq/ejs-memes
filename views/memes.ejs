@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link href="../../stylesheets/navbar.css" rel="stylesheet" />
+    <link href="../../stylesheets/meme.css" rel="stylesheet" />
+    <%- include('./partials/head.ejs') %>
+  </head>
+
+  <body class="position-relative" data-bs-spy="scroll">
+    <%- include('./partials/navbar.ejs') %>
+    <section class="container meme-detail-container">
+      <h1>Memes</h1>
+      <div class="d-flex justify-content-end">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          id="search"
+        />
+        <button class="btn btn-outline-success" type="submit" id="search-btn">
+          Search
+        </button>
+      
+        </button>
+        </div>
+
+      <table class="table meme-table-row" id="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <% if (user) { %>
+            <th scope="col">Options</th>
+            <% } %>
+          </tr>
+        </thead>
+        <tbody>
+          <% memes.forEach(function(meme){ %>
+          <tr class="t-row">
+            <td class="text"><%= meme.name %></td>
+            <td>
+              <img width="20%" height="100px" src="<%= meme.url %>" alt="" />
+            </td>
+            <% if (user) { %>
+            <td>
+              <button
+                class="btn btn-primary"
+                onclick="window.location.href=`/meme/<%= meme.id %>`"
+              >
+                Details
+              </button>
+            </td>
+            <% } %>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </section>
+    <%- include('./partials/scripts.ejs') %>
+    <%- include('./partials/search.ejs') %>
+  </body>
+</html>

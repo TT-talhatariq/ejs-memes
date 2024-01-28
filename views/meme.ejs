@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meme Info</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="../stylesheets/navbar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../stylesheets/meme.css" />
+  </head>
+
+  <body class="position-relative" data-bs-spy="scroll">
+    <%- include('./partials/navbar.ejs') %>
+    <section class="container meme-detail-container">
+      <h1>Meme Details</h1>
+      <div class="card custom-card">
+        <img src="<%= meme.url %>" class="card-img-top" alt="Meme Image" />
+        <div class="card-body">
+          <h5 class="card-title"><%= meme.name %></h5>
+          <p class="card-text">Meme ID: <%= meme.id %></p>
+          <p class="card-text">Width: <%= meme.width %>px</p>
+          <p class="card-text">Height: <%= meme.height %>px</p>
+        </div>
+      </div>
+    </section>
+
+    <%- include('./partials/scripts.ejs') %>
+  </body>
+</html>
